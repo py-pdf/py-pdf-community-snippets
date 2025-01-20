@@ -74,8 +74,10 @@ def up2(
         ),
     ],
     out: Path,
+    layout: str = typer.Option(None, "--layout", help="Optional page layout (e.g., 2x2, 3x3, 1x2, 2x1)")
 ) -> None:
-    pdfly.up2.main(pdf, out)
+    """Combine PDF pages based on the specified layout, if provided."""
+    pdfly.up2.up2_main(pdf, out, layout)
 
 
 @entry_point.command(name="cat", help=pdfly.cat.__doc__)  # type: ignore[misc]
