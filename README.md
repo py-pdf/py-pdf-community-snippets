@@ -26,23 +26,24 @@ $ pdfly --help
 
  pdfly is a pure-python cli application for manipulating PDF files.
 
-╭─ Options ───────────────────────────────────────────────────────────────────╮
-│ --version                                                                   │
-│ --help             Show this message and exit.                              │
-╰─────────────────────────────────────────────────────────────────────────────╯
-╭─ Commands ──────────────────────────────────────────────────────────────────╮
-│ 2-up             Create a booklet-style PDF from a single input.            │
-│ cat              Concatenate pages from PDF files into a single PDF file.   │
-│ compress         Compress a PDF.                                            │
-| uncompress       Uncompresses a PDF.                                        │
-│ extract-images   Extract images from PDF without resampling or altering.    │
-│ extract-text     Extract text from a PDF file.                              │
-│ meta             Show metadata of a PDF file                                │
-│ pagemeta         Give details about a single page.                          │
-│ rm               Remove pages from PDF files.                               │
-│ update-offsets   Updates offsets and lengths in a simple PDF file.          │
-│ x2pdf            Convert one or more files to PDF. Each file is a page.     │
-╰─────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ────────────────────────────────────────────────────────────────────────────╮
+│ --version                                                                            │
+│ --help                    Show this message and exit.                                │
+╰──────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ───────────────────────────────────────────────────────────────────────────╮
+│ 2-up                      Create a booklet-style PDF from a single input.            │
+│ cat                       Concatenate pages from PDF files into a single PDF file.   │
+│ compress                  Compress a PDF.                                            │
+| uncompress                Uncompresses a PDF.                                        │
+| extract-annotated-pages   Extract only the annotated pages from a PDF.               |
+│ extract-images            Extract images from PDF without resampling or altering.    │
+│ extract-text              Extract text from a PDF file.                              │
+│ meta                      Show metadata of a PDF file                                │
+│ pagemeta                  Give details about a single page.                          │
+│ rm                        Remove pages from PDF files.                               │
+│ update-offsets            Updates offsets and lengths in a simple PDF file.          │
+│ x2pdf                     Convert one or more files to PDF. Each file is a page.     │
+╰──────────────────────────────────────────────────────────────────────────────────────╯
 ```
 
 You can see the help of every subcommand by typing:
@@ -56,13 +57,13 @@ $ pdfly 2-up --help
  Pairs of two pages will be put on one page (left and right)
  usage: python 2-up.py input_file output_file
 
-╭─ Arguments ─────────────────────────────────────────────────────────────────╮
-│ *    pdf      PATH  [default: None] [required]                              │
-│ *    out      PATH  [default: None] [required]                              │
-╰─────────────────────────────────────────────────────────────────────────────╯
-╭─ Options ───────────────────────────────────────────────────────────────────╮
-│ --help          Show this message and exit.                                 │
-╰─────────────────────────────────────────────────────────────────────────────╯
+╭─ Arguments ──────────────────────────────────────────────────────────────────────────╮
+│ *    pdf      PATH  [default: None] [required]                                       │
+│ *    out      PATH  [default: None] [required]                                       │
+╰──────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ────────────────────────────────────────────────────────────────────────────╮
+│ --help          Show this message and exit.                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────╯
 ```
 
 ## Contributors ✨

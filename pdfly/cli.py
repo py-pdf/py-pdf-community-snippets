@@ -13,6 +13,7 @@ from typing_extensions import Annotated
 import pdfly.booklet
 import pdfly.cat
 import pdfly.compress
+import pdfly.extract_annotated_pages
 import pdfly.extract_images
 import pdfly.metadata
 import pdfly.pagemeta
@@ -319,3 +320,27 @@ def x2pdf(
     exit_code = pdfly.x2pdf.main(x, output)
     if exit_code:
         raise typer.Exit(code=exit_code)
+
+
+@entry_point.command(name="extract-annotated-pages", help=pdfly.extract_annotated_pages.__doc__)  # type: ignore[misc]
+def extract_annotated_pages(
+    input_pdf: Annotated[
+        Path,
+        typer.Argument(
+            dir_okay=False,
+            exists=True,
+            resolve_path=True,
+            help="Input PDF file.",
+        ),
+    ],
+    output_pdf: Annotated[
+        Optional[Path],
+        typer.Option(
+            "--output",
+            "-o",
+            writable=True,
+            help="Output PDF file. Defaults to 'input_pdf_annotated'.",
+        ),
+    ] = None,
+) -> None:
+    pdfly.extract_annotated_pages.main(input_pdf, output_pdf)
